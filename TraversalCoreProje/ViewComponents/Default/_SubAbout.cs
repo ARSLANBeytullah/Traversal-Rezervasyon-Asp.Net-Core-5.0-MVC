@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace TraversalCoreProje.ViewComponents.Default
 {
-    public class _Feature : ViewComponent
+    public class _SubAbout:ViewComponent
     {
-        FeatureManager featureManager = new FeatureManager(new EfFeatureDal());
+        SubAboutManager SubAboutManager = new SubAboutManager(new EfSubAboutDal()); //Refactoring yapılacak ve bağımlılıklar ortadan kalkacaktır.
         public IViewComponentResult Invoke()
         {
-            //ViewBag.image1 = featureManager.GetById
-            return View();
+            var values = SubAboutManager.TGetList();
+            return View(values);
         }
     }
 }
