@@ -170,7 +170,7 @@
                     <!--//author-card-->
 
 
-                    @await Component.InvokeAsync("_CommentList")
+                    @await Component.InvokeAsync("_CommentList",new { id = ViewBag.i }) @*Verileri viewBag ile taşıdım.*@
                     
                     @await Component.InvokeAsync("_AddComment")
 
