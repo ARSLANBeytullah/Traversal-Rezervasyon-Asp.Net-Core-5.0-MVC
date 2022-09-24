@@ -22,5 +22,7 @@ namespace EntityLayer.Concrete
         public string Details1 { get; set; } //Görsel öncesi açıklama detaylarını tutacak
         public string Details2 { get; set; } //Görsel sonrası açıklama detaylarını tutacak
         public string Image2 { get; set; }
+
+        public List<Comment> Comments { get; set; } //Navigation Property
     }
 }
