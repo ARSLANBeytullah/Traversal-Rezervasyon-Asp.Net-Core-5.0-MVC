@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Context : DbContext //DbContext Entity'leri veritabanında ki tablolara dönüştürmek için oluşturulan sınıftır.
+    //DbContext Entity'leri veritabanında ki tablolara dönüştürmek için oluşturulan sınıftır.Eğer proejmiz de Identity kütüphanesini kullanıyorsak IdentityDbContext'den miras almalıyız.IdentityDbContext'de esasında DbContext'den miras alan bir sınıftır.
+    public class Context : IdentityDbContext<AppUser,AppRole,int> 
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
