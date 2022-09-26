@@ -17,6 +17,7 @@ namespace TraversalCoreProje.Areas.Member.Controllers
         ReservationManager reservationManager = new ReservationManager(new EfReservationDal());
         public IActionResult MyCurrentReservation()
         {
+
             return View();
         }
         public IActionResult MyOldReservation()
@@ -42,7 +43,8 @@ namespace TraversalCoreProje.Areas.Member.Controllers
         [HttpPost]
         public IActionResult NewReservation(Reservation p)
         {
-            p.AppUserId = 3;
+            p.AppUserId = 2;
+            p.Status = "Onay Bekliyor";
             reservationManager.TAdd(p);
             return RedirectToAction("MyCurrentReservation");
         }
