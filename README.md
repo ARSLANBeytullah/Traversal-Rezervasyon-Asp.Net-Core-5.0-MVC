@@ -5,3 +5,5 @@ Katmanlı Mimari,
 .Net Core,
 EntityFramework ORM aracı,
 MS SQL
+.NET MVC
+Best Practice
